@@ -1,0 +1,83 @@
+/* ===== PAGINA DE INICIO ===== */
+.diseñPrinci {
+    height: 100vh;
+    background: url("./Imagenes/ImageHome.jpg") no-repeat center center/cover; /*No se repite, la centra y cubre toda la pantalla*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.overlay {         /*Crea una capa negra transparente*/
+    position: absolute;    /*Se posiciona encima */
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.contenido {
+    position: relative; /*Hace que el texto este encima del overlay*/
+    z-index: 2;        /*Dice que esta arriba y que esta abajo*/
+}
+.contenido h1 {       /*Cambia tamano y agrega espacio abajo*/
+    font-size: 3rem;
+    margin-bottom: 20px;    
+}
+.contenido p {    /*Ajusta el tamaño del parrafo y la separacion*/
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.btn {
+    text-decoration: none;  /*Quita el subrayado del bton*/
+    background: #00bcd4;   /*Color*/
+    padding: 15px 30px;     /*Tamaño*/
+    border-radius: 30px;   /*Bordes Redondeados*/
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease;    /*Animacion al momento de darle click*/
+}
+.btn:hover {
+    background: #0097a7;   /*Cuando se coloca el cursor en el btn se cambia de color*/
+}
+
+/* ===== NAVBAR ===== */
+.navbar {      /*Diseño de la barra de navegacion*/
+    position: absolute;  /*La barra flota encima*/
+    top: 0;     /*Posicion desde a mero arriba*/
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;   /*Separa el logo a la izq, menu al centro y btn a la derecha*/
+    align-items: center;
+    z-index: 3; /*Encima del overlay y la imagen*/
+}
+.logo {
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+}
+nav ul {
+    list-style: none;   /*Quita los puntos de la lista (li)*/
+    display: flex;     /*Los pone en linea horizontal*/
+    gap: 30px;
+}
+nav ul li a {
+    text-decoration: none;    /*Quita el subrayado*/
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;    /*Animacion*/
+}
+nav ul li a:hover {
+    color: #00bcd4;    /*Cambia de color al pasar el mouse*/
+}
+.btn-nav {
+    background: #00bcd4;
+    padding: 10px 20px;
+    border-radius: 20px;    /*Bordes redondeados*/
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+.btn-nav:hover {
+    background: #000000;   /*Cambia de color al pasar el mouse*/
+}
