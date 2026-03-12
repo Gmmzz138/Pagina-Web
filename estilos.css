@@ -1,83 +1,300 @@
-/* ===== PAGINA DE INICIO ===== */
-.diseñPrinci {
-    height: 100vh;
-    background: url("./Imagenes/ImageHome.jpg") no-repeat center center/cover; /*No se repite, la centra y cubre toda la pantalla*/
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; 
 }
-.overlay {         /*Crea una capa negra transparente*/
-    position: absolute;    /*Se posiciona encima */
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-.contenido {
-    position: relative; /*Hace que el texto este encima del overlay*/
-    z-index: 2;        /*Dice que esta arriba y que esta abajo*/
-}
-.contenido h1 {       /*Cambia tamano y agrega espacio abajo*/
-    font-size: 3rem;
-    margin-bottom: 20px;    
-}
-.contenido p {    /*Ajusta el tamaño del parrafo y la separacion*/
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-.btn {
-    text-decoration: none;  /*Quita el subrayado del bton*/
-    background: #00bcd4;   /*Color*/
-    padding: 15px 30px;     /*Tamaño*/
-    border-radius: 30px;   /*Bordes Redondeados*/
-    color: white;
-    font-weight: bold;
-    transition: 0.3s ease;    /*Animacion al momento de darle click*/
-}
-.btn:hover {
-    background: #0097a7;   /*Cuando se coloca el cursor en el btn se cambia de color*/
+/* ==================================================(BARRA DE NAVEGACIoN) =============================================================== */
+.diseñbarra {
+    background-color: #000; /*color de la barra*/
+    display: flex;          /* Alinea logo y navegación en línea */
+    align-items: center;    /* Centra los elementos verticalmente */
+    height: 120px;       /* altura de la barra */
+    padding: 0 5%;
+    position: relative;       /*no deja mover el mouse(scroll) */
+    top: 0;
+    left: 0;
+    width: 100%;      /* ancho de la pantalla */
+    z-index: 1000;   /*encima de todo */
 }
 
-/* ===== NAVBAR ===== */
-.navbar {      /*Diseño de la barra de navegacion*/
-    position: absolute;  /*La barra flota encima*/
-    top: 0;     /*Posicion desde a mero arriba*/
-    width: 100%;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;   /*Separa el logo a la izq, menu al centro y btn a la derecha*/
-    align-items: center;
-    z-index: 3; /*Encima del overlay y la imagen*/
-}
 .logo {
     color: white;
-    font-size: 4rem;
-    font-weight: bold;
+    font-size: 2.5rem;  /* Tamaño*/
+    font-weight: bold;    /*negritas*/
+    flex-shrink: 0;
 }
-nav ul {
-    list-style: none;   /*Quita los puntos de la lista (li)*/
-    display: flex;     /*Los pone en linea horizontal*/
-    gap: 30px;
+
+.menu {
+    flex: 1;                /* distribuye los links */
+    height: 100%;
+    display: flex;
+    justify-content: center; /* centra la lista de navegación */
 }
-nav ul li a {
-    text-decoration: none;    /*Quita el subrayado*/
+
+.home-about-ul {
+    display: flex;  /*"Home, About, Destinos y contactos" hace que se pongan uno al lado del otro en una fila*/
+    align-items: center;  /*alinea los nombres verticalmente justo al centro de la barra*/
+    width: 100%;
+    height: 100%;
+    list-style: none;       /* quita los puntos de la lista */
+}
+
+.fondo-home-about {  /*cuando el usuario quiera hacer clic no tiene que apuntar exactamente a la letra*/
+    height: 100%;  /*obliga a que cada item de la lista sea tan alto como la barra de navegación*/
+    display: flex;
+    align-items: center;
+}
+
+.text-home-about {
+    text-decoration: none;  /*quita el subrayado de los links */
     color: white;
-    font-weight: 500;
-    transition: 0.3s;    /*Animacion*/
-}
-nav ul li a:hover {
-    color: #00bcd4;    /*Cambia de color al pasar el mouse*/
-}
-.btn-nav {
-    background: #00bcd4;
-    padding: 10px 20px;
-    border-radius: 20px;    /*Bordes redondeados*/
-    text-decoration: none;
-    color: white;
+    font-size: 2.2rem;   /*tamaño de la palabra */ 
+    font-weight: 800;
+    text-transform: uppercase; /* Todo en mayúsculas */
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 100px;       /* separación entre home about destination */
     transition: 0.3s;
 }
-.btn-nav:hover {
-    background: #000000;   /*Cambia de color al pasar el mouse*/
+.text-home-about:hover {    /*efecto al pasar el mouse por home about y demas  */
+    background-color: white;
+    color: black;
+}
+
+.alineacion-home-about {
+    margin-left: auto;      /* empuja el menú hacia el centro desde la izquierda */
+}
+
+.alineacion-login {
+    margin-left: auto;       /*empuja el botón login hacia la derecha */
+}
+
+.diseñlogin {
+    background: white;
+    padding: 0px 80px;
+    border-radius: 50px;    /*bordes redondeados del login */
+    font-weight: 900;
+    text-transform: uppercase; /* Todo en mayúsculas */
+    height: auto !important; 
+    text-decoration: none; 
+    font-size: 1.8rem;    /*tamaño de la letra*/
+    color: #000;
+    display: inline-block;  /*el botón se comporta como un bloque*/
+    transition: 0.3s;
+}
+
+.diseñlogin:hover {
+    background-color: white !important;
+    color:#000 !important; /* cambia a amarillo al pasar el mouse */
+    transform: scale(1.1);     /*crece al seleccionarlo (hover) */
+}
+
+/* ======================================== PÁGINA DE INICIO======================================================================= */
+.diseñPrinci {
+    min-height: 100vh;
+    background: url("./Imagenes/ImageHome.jpg") no-repeat center center/cover;
+    position: relative;
+    display: flex;                       /*alinea el contenido interno*/
+    justify-content: flex-start;            /*lado izquierdo del contenedor*/
+    align-items: center;
+    color: white;
+    padding-top: 120px;   /*contenido en medio */
+    
+}
+
+/*capa oscura sobre la imagen (overlay)*/
+.fondoOscuro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);         /*50% de transparencia*/
+    z-index: 1;                             /*por encima del fondo, por debajo del texto*/
+}
+
+/* Contenedor del texto (H1, P y Botón) */
+.contenido {
+    position: relative;                     /* mantiene su posicion pero permite usa z-index*/
+    left: 5%;                     /*margen*/
+    z-index: 10;                            /*asegura de estar sobre el overlay oscuro*/
+    text-align: left;        /*text a la izquierda*/
+    width: 80%;
+}
+
+/* Título El mundo te espera  */
+.contenido h1 {
+    font-size: clamp(50px, 8vw, 100px);
+    font-weight: 900;
+    text-transform: uppercase;           /*mayúsculas*/
+    line-height: 0.9;              /*espacio entre lineas*/
+    margin-bottom: 20px;                    /* epacio entre el titulo y el parrafo de abajo */
+}
+
+/* Párrafo Descriptivo */
+.contenido p {
+    font-size: clamp(20px, 2.5vw, 35px);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 60px;            /*espacio entre el párrafo y el botón de abajo*/
+    max-width: 1300px;                    /*espacio de lineas */
+    text-align: justify;
+    line-height: 1.4;
+}
+
+/*==================================== Botón "Explorar Destinos"========================================== */
+.ExplorarDestinos {
+    padding: 35px 60px;   /*espacio interno */
+    font-size: 1.8rem;
+    font-weight: 800;
+    background-color: #000;
+    color: white;
+    text-decoration: none;       /* quita el subrayado del enlace */
+    text-transform: uppercase;      /*mayúsculas */
+    border-radius: 100px;                         /* bordes redondeados */
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /*profundidad */
+    cursor: pointer;         /*muestra la "manita" al pasar el mouse */
+}
+
+/* efectos al pasar el mouse en el boton */
+.ExplorarDestinos:hover {  
+    transform: scale(1.05);          /* agranda el botón */
+    background-color: white;         /*fondo*/
+    color: #000;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5); /*se agranda con acercamiento */
+}
+
+
+
+
+/* ====================================================Laptop================================== */
+@media (max-width: 1440px) {
+    .diseñbarra {
+        height: 100px;
+        padding: 0 4%;
+    }
+    .logo {
+        font-size: 2rem;
+    }
+    .text-home-about {
+        font-size: 2rem;
+        padding: 0 60px;
+    }
+    .diseñlogin {
+        font-size: 1.6rem;
+        padding: 0 60px;
+    }
+    .ExplorarDestinos {
+        padding: 30px 50px;
+        font-size: 1.6rem;
+    }
+}
+
+/*===========================================Tablet=======================================================*/
+@media (max-width: 1024px) {
+    .diseñbarra {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 3%;
+    }
+    .menu {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+    .home-about-ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .text-home-about {
+        padding: 10px 0;
+        font-size: 1.6rem;
+    }
+    .diseñlogin {
+        padding: 10px 40px;
+        font-size: 1.4rem;
+    }
+    .contenido {
+        width: 90%;
+        left: 5%;
+        padding-top: 100px;
+    }
+    .contenido h1 {
+        font-size: clamp(40px, 6vw, 80px);
+    }
+    .contenido p {
+        font-size: clamp(16px, 2vw, 28px);
+        margin-bottom: 40px;
+    }
+    .ExplorarDestinos {
+        padding: 20px 40px;
+        font-size: 1.4rem;
+    }
+    .diseñlogin svg {
+        width: 50px;
+        height: 60px;
+    }
+}
+
+/*===================================================Celular====================================================*/
+@media (max-width: 768px) {
+    .diseñbarra {
+        padding: 10px 2%;
+        flex-direction: column;      /* apila logo y menú */
+        align-items: center;
+        position: relative;
+    }
+    .diseñPrinci{
+    padding-top: 0px;
+    min-height: 100vh;
+}
+    .logo {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    .home-about-ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .alineacion-home-about{
+        margin-left: 0;
+    }
+
+    .alineacion-login{
+        margin-left: 0;
+    }
+    .text-home-about {
+        font-size: 1.4rem;
+        padding: 8px 0;
+    }
+    .diseñlogin {
+        padding: 8px 30px;
+        font-size: 1.2rem;
+    }
+    .contenido {
+        width: 95%;
+        left: 2.5%;
+        padding-top: 80px;
+    }
+    .contenido h1 {
+        font-size: clamp(30px, 5vw, 60px);
+    }
+    .contenido p {
+        font-size: clamp(14px, 2vw, 22px);
+        margin-bottom: 30px;
+    }
+    .ExplorarDestinos {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+    }
+    .diseñlogin svg {
+        width: 40px;
+        height: 50px;
+    }
 }

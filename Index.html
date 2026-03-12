@@ -2,44 +2,44 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Viajes</title>   <!--Nombre de la pestaña del navegador-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes LookMeUp</title>   <!--Nombre de la pestaña del navegador-->
     <link rel="stylesheet" href="estilos.css"> <!--Relacion con Index.css-->
 </head>
 <body>
-    
-    <!--=====BARRA DE NAVEGACION====-->
-    <header class="navbar">   <!--Clase del css-->
+    <!--=====Aqui esta la barra de navegacion====-->
+    <header class="diseñbarra">
     <div class="logo">Aun no hay logo</div>   
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Destination</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <a href="#" class="btn-nav">Login</a>    <!--Btn para iniciar sesion, que te manda directo a la pagina de login-->
+        <nav class="menu"> 
+            <ul class="home-about-ul"> 
+                <li class="fondo-home-about alineacion-home-about"><a href="index.html" class="text-home-about">Inicio</a></li>
+                <li class="fondo-home-about"><a href="barranav/acercade.html" class="text-home-about">Acerca de</a></li>
+                <li class="fondo-home-about"><a href="destino/destinos.html" class="text-home-about">Destinos</a></li>
+                <li class="fondo-home-about"><a href="barranav/contacto.html" class="text-home-about">Contacto</a></li>
+                <li class="fondo-home-about alineacion-login"><a href="barranav/login.html" class="diseñlogin"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="90" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></a></li> 
+            </ul>
+        </nav>
     </header>
 
-    <!--=====PAGINA PRINCIPAL====-->
+
+    <!--=====Diseño de la pagina principal====-->
     <section class="diseñPrinci">   <!--Clase del CSS-->
-        <div class="overlay"></div>
-        <div class="contenido">    <!--Contenedor donde va el texto y el boton-->
-            <h1>Descubre el mundo con nosotros</h1>
-            <p>Vive experiencias inolvidables en los mejores destinos</p>
-            <a href="#" class="btn">Explorar destinos</a> <!--Enlace del boton-->
+        <div class="fondoOscuro"></div>
+        <div class="contenido">    <!--Contenedor donde va el texto,parrafo y el boton-->
+            <h1>El Mundo te Espera: De la Historia al Horizonte</h1>
+            <p><br><b>"Para los amantes viajeros de lugares turisticos."</b>
+            <br>
+            <br>¿Alguna vez has sentido que los días se repiten? En Viajes LookMeUp creemos que
+            la vida se mide por los momentos que te quitan el aliento. No solo vendemos viajes, 
+            te entregamos la llave a esa historia que contarás siempre: desde el misticismo de 
+            tierras ancestrales y sabores vibrantes, hasta el romance de viejas plazas renacentistas
+             bañadas en sol. Te llevamos a caminar sobre murallas milenarias que desafían el 
+             horizonte y a perderte en la elegancia eterna de ciudades de luz o bajo el duende 
+             de una arquitectura que baila sobre el Mediterráneo. Olvida los mapas convencionales; 
+             nosotros cuidamos cada detalle para que tú solo te encargues de vivir. Porque el mundo
+              es demasiado grande para verlo solo a través de una pantalla.</p>
+            <a href="/destino/destinos.html" class="ExplorarDestinos">Explorar destinos</a> <!--Enlace del boton Explorar Destinos-->
         </div>
     </section>
-
-    <section id="francia" class="francia">
-    <div class="tarjeta">
-        <img src="./Imagenes/Francia.jpg" alt="Francia">
-        <div class="info">
-            <h3>Francia</h3>
-            <p>El destino del romance, cultura y arte.</p>
-            <a href="Francia.html" class="btn-destino">Ver más</a>
-        </div>
-    </div>
-</section>
 </body>
 </html>

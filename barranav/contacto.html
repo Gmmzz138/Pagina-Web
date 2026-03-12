@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Viajes LookMeUp</title>
+    <link rel="stylesheet" href="contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!--Aqui se importa la biblioteca de iconos de Font Awesome-->
+</head>
+<body>
+  <!--Aqui esta la barra de navegacion -->
+    <header class="diseñbarra">
+        <div class="logo">Aun no hay logo</div>
+        <nav class="menu">
+            <ul class="home-about-ul">
+                <li class="fondo-home-about alineacion-home-about"><a href="../index.html" class="text-home-about">Inicio</a></li>
+                <li class="fondo-home-about"><a href="acercade.html" class="text-home-about">Acerca de</a></li>
+                <li class="fondo-home-about"><a href="../destino/destinos.html" class="text-home-about">Destinos</a></li>
+                <li class="fondo-home-about"><a href="contacto.html" class="text-home-about">Contacto</a></li>
+                <li class="fondo-home-about alineacion-login"><a href="login.html" class="diseñlogin"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="50" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></a></li> 
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- imagen de fondo-->
+    <section class="imgfondo">
+        <div>
+            <h1>Contactanos</h1>
+            <p>Estamos listos para ayudarte a planear tu próxima aventura</p>
+            <button>Planear mi viaje</button>
+        </div>
+    </section>
+
+
+    <!--Aqui estan los 4 tipos de contactos (Telefono, Whatsapp, Email y Gps) -->
+    <section class="fondo-telef-email-whatsapp">
+        <div class="fondo-grid">
+            <div class="acomododetarjetas">
+                <div class="diseñodecontactos">
+                    <i class="fa-solid fa-phone"></i>   <!--Icono telefono-->
+                    <h3>Telefono</h3>
+                    <p>+52 33 2135 1461</p>
+                </div>
+
+                <div class="diseñodecontactos">
+                    <i class="fa-brands fa-whatsapp"></i>   <!--Icono Whatsapp-->
+                    <h3>WhatsApp</h3>
+                    <p>Respuesta inmediata</p>
+                </div>
+
+                <div class="diseñodecontactos">
+                    <i class="fa-solid fa-envelope"></i>     <!--Icono Correo-->
+                    <h3>Email</h3>
+                    <p>losplebillos781@tecn.mx.com</p>
+                </div>
+
+                <div class="diseñodecontactos">
+                    <i class="fa-solid fa-location-dot"></i>    <!--Icono Gps-->
+                    <h3>Google Maps</h3>
+                    <p>Guadalajara, Mexico</p>
+                </div>
+            </div>
+
+    <!--Aqui se encuentra el formulario "Escribe tu mensaje"  -->
+            <div class="EnvianosunMensaje">
+                <h2>Envíanos un mensaje</h2>
+                <form>
+                    <div class="EnvianosunMensaje-campos">
+                        <input type="text" placeholder="Nombre">
+                    </div>
+
+                    <div class="EnvianosunMensaje-campos">
+                        <input type="email" placeholder="Correo electrónico">
+                    </div>
+
+                    <div class="EnvianosunMensaje-campos">
+                        <textarea placeholder="Escribe tu mensaje..."></textarea>
+                    </div>
+                    <button class="enviarmensaje">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Aqui esta el Gps-->
+    <section class="mapa">
+        <iframe 
+            src="https://www.google.com/maps?q=guadalajara&output=embed"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen>
+        </iframe>
+    </section>
+
+
+    <!-- Aqui esta el pie de pagina -->
+    <footer>
+        <p>© 2026 LookMeUp Viajes</p>
+        <p>Explora el mundo con nosotros</p>
+    </footer>
+</body>
+</html>

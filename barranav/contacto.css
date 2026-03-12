@@ -1,0 +1,327 @@
+html{
+font-size:18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*hace que padding y border no aumenten el tamaño del elemento*/
+    font-family: 'Arial', sans-serif; /*tipo de letra*/
+}
+
+
+/* ==================================================(BARRA DE NAVEGACIÓN) =============================================================== */
+.diseñbarra {
+    background-color: #000; /*color de la barra*/
+    display: flex;          /* Alinea logo y navegación en línea */
+    align-items: center;    /* Centra los elementos verticalmente */
+    height: 120px;       /* altura de la barra */
+    padding: 0 5%;
+    position: relative;       /*no deja mover el mouse(scroll) */
+    top: 0;
+    left: 0;
+    width: 100%;      /* ancho de la pantalla */
+    z-index: 1000;   /*encima de todo */
+}
+.logo {
+    color: white;
+    font-size: 2.5rem;  /* Tamaño*/
+    font-weight: bold;    /*negritas*/
+    flex-shrink: 0;
+}
+.menu {
+    flex: 1;                /* distribuye los links */
+    height: 100%;
+    display: flex;
+    justify-content: center; /* centra la lista de navegación */
+}
+.home-about-ul {
+    display: flex;  /*"Home, About, Destinos y contactos" hace que se pongan uno al lado del otro en una fila*/
+    align-items: center;  /*alinea los nombres verticalmente justo al centro de la barra*/
+    width: 100%;
+    height: 100%;
+    list-style: none;       /* quita los puntos de la lista */
+}
+.fondo-home-about {  /*cuando el usuario quiera hacer clic no tiene que apuntar exactamente a la letra*/
+    height: 100%;  /*obliga a que cada item de la lista sea tan alto como la barra de navegación*/
+    display: flex;
+    align-items: center;
+}
+.text-home-about {
+    text-decoration: none;  /*quita el subrayado de los links */
+    color: white;
+    font-size: 2.2rem;   /*tamaño de la palabra */ 
+    font-weight: 800;
+    text-transform: uppercase; /* Todo en mayúsculas */
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 100px;       /* separación entre home about destination */
+    transition: 0.3s;
+}
+.text-home-about:hover {    /*efecto al pasar el mouse por home about y demas  */
+    background-color: white;
+    color: black;
+}
+.alineacion-home-about {
+    margin-left: auto;      /* empuja el menú hacia el centro desde la izquierda */
+}
+.alineacion-login {
+    margin-left: auto;       /*empuja el botón login hacia la derecha */
+}
+.diseñlogin {
+    background: white;
+    padding: 0px 80px;
+    border-radius: 50px;    /*bordes redondeados del login */
+    font-weight: 900;
+    text-transform: uppercase; /* Todo en mayúsculas */
+    height: auto !important; 
+    text-decoration: none; 
+    font-size: 1.8rem;    /*tamaño de la letra*/
+    color: #000;
+    display: inline-block;  /*el botón se comporta como un bloque*/
+    transition: 0.3s;
+}
+.diseñlogin:hover {
+    background-color: white !important;
+    color:#000 !important; /* cambia a amarillo al pasar el mouse */
+    transform: scale(1.1);     /*crece al seleccionarlo (hover) */
+}
+
+
+/*==========================================Imagen de fondo=======================================================*/ 
+.imgfondo{
+height:70vh; /*altura del banner principal*/
+background:
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), /*capa oscura sobre la imagen*/
+url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+background-size:cover;            /*la imagen cubre todo el contenedor*/
+background-position:center;
+display:flex;
+justify-content:center;             /*centra horizontalmente el contenido*/
+align-items:center;       /*centra verticalmente el contenido de la imagende fondo*/
+text-align:center;
+color:white;
+padding-top:80px;
+}
+.imgfondo h1{
+font-size:60px; /*tamaño del título*/
+font-weight:800;
+margin-bottom:10px; /*espacio debajo del título*/
+text-shadow:0 5px 20px rgba(0,0,0,0.6);
+}
+.imgfondo p{
+font-size:20px;
+margin-bottom:25px; /*espacio antes del botón*/
+}
+.imgfondo button{
+background:#2563eb;
+color:white;
+border:none;
+padding:14px 28px; /*espacio interno*/
+border-radius:30px;
+font-size:16px;
+cursor:pointer; /*cursor mano*/
+transition:.3s;
+}
+.imgfondo button:hover{
+background:#1d4ed8; /*color mas oscuro al pasar el mouse*/
+}
+
+
+/*======================================Telefono, Whatsapp, Email, Gps========================================*/
+.fondo-telef-email-whatsapp{
+padding:120px 10%;           /*espacio*/
+background:#000000;                 /*color del fondo*/
+margin-top:-80px;
+border-radius:40px 40px 0 0; /*bordes redondeados*/
+}
+.fondo-grid{
+display:grid;         /*pone los contactos en horizontal*/
+grid-template-columns:1fr 1fr;       /*dos columnas*/
+gap:60px;        /*espacio entre columnas*/
+}
+
+
+/*=================================Los 4 tipos de contactos======================================================*/  
+.acomododetarjetas{
+display:grid;  /*las pone en vertical una debajo de la otra*/
+grid-template-columns:1fr 1fr; /*dos tarjetas por fila*/
+gap:20px;   /*espacion entre ellas*/
+}
+.diseñodecontactos{
+background:white;
+padding:35px;       /*tamaño*/
+border-radius:18px;     /*bordes redondos*/
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+transition:.4s;
+border:1px solid #eee;
+
+/*efectos de los contactos*/
+}
+.diseñodecontactos:hover{
+transform:translateY(-8px); /*levanta la tarjeta al pasar el mouse*/
+box-shadow:0 25px 50px rgba(0,0,0,0.12);
+}
+
+.diseñodecontactos i{
+font-size:35px; /*tamaño del icono*/
+color:#2563eb;
+margin-bottom:12px;
+}
+
+/*=====================================Envianos un Mensaje Formulario============================================= */
+
+.EnvianosunMensaje{
+background:white;
+padding:40px;          /*tamaño*/
+border-radius:18px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+/*Titulo del formulario*/
+.EnvianosunMensaje h2{   
+margin-bottom:20px;      /*espacio debajo del titulo*/
+}
+
+/*Grupo de campos del formulario (Nombre,correo,mensaje)*/
+.EnvianosunMensaje-campos{            
+margin-bottom:15px; /*espacio entre campos*/
+}
+
+/*Donde el usuario escribe*/
+.EnvianosunMensaje input, .EnvianosunMensaje textarea{
+width:100%; /*ocupa todo el ancho*/
+border:1px solid #ddd;   /*borde gris*/
+padding:14px;          /*para que el texto no toque el borde*/
+border-radius:10px;
+font-size:14px;        /*tamaño del texto*/
+transition:.2s;
+}
+
+/*Efectos cuando se hace clic en los campos*/
+.EnvianosunMensaje input:focus, .EnvianosunMensaje textarea:focus{
+outline:none;                    /*elimina borde azul del navegador*/
+border-color:#2563eb;     /*borde azul al seleccionar*/
+box-shadow:0 0 0 3px rgba(37,99,235,0.1);
+}
+
+/*Para mensajes largos en el campo "Escribe tu mensaje" */
+textarea{
+resize:none; /*evita que el usuario cambie el tamaño*/
+height:120px;
+}
+
+.enviarmensaje{
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 25px;    /*tamaño de los bordes*/
+border-radius:8px;
+cursor:pointer;     /*cursor mano*/
+font-weight:bold;      /*grosor*/
+transition:.3s;
+}
+
+/*efectos del boton enviar mensaje*/
+.enviarmensaje:hover{
+background:#1d4ed8;
+}
+
+/*====================================================Mapa================================================ */
+.mapa{
+width:100%;   /*se muestra el mapa depende el tamaño*/
+height:400px;
+}
+
+/*==================================================Pie de pagina================================================*/
+footer{
+background:#0f172a; /*color oscuro*/
+color:white;
+text-align:center;
+padding:40px;
+}
+
+/*                                           @media para celular             */
+
+@media (max-width:768px){
+.diseñbarra{
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+}
+.home-about-ul{
+    flex-direction: column;
+    width: 100%;
+}
+.text-home-about{
+    font-size: 1.2rem;
+    padding: 10px 0;
+}
+.diseñlogin{
+    padding: 10px 30px;
+    font-size: 1rem;
+}
+.logo{
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.imgfondo{
+    height:50vh;
+    padding-top:20px;
+}
+.imgfondo h1{
+    font-size:35px;
+}
+.imgfondo p{
+    font-size:16px;
+}
+.fondo-telef-email-whatsapp{
+    padding:80px 5%;
+}
+.acomododetarjetas{
+grid-template-columns:1fr;
+}
+.EnvianosunMensaje{
+padding:25px;
+}
+.fondo-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+}
+}
+
+/*                                                        Tablet  */
+
+@media (min-width:769px) and (max-width:1024px){
+.text-home-about{
+    font-size:1.5rem;
+    padding:0 40px;
+}
+.diseñlogin{
+    padding:20px 60px;
+    font-size:1.4rem;
+}
+.logo{
+    font-size:2rem;
+}
+.imgfondo h1{
+    font-size:50px;
+}
+.fondo-grid{
+    gap:40px;
+}
+}
+
+/*                              Laptop                */
+
+@media (min-width:1025px){
+.fondo-grid{
+grid-template-columns:1fr 1fr;
+}
+.acomododetarjetas{
+grid-template-columns:1fr 1fr;
+}
+}
+
+

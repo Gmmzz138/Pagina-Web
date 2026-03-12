@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./bootstrap5/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap5/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <article class="container">
+        <div class="row">
+            <div class="col-12">
+                <img src="./images/persona.jpg" alt="" height="150px"  
+                                role="button" class="btn btn-secondary" title="Jefe de RH" 
+                                data-bs-toggle="popover"
+                                data-bs-content="Juan Perez juanperez@email.com"> 
+            </div>
+        </div>
+    </article>
+
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+</body>
+</html>

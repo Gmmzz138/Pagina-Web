@@ -1,0 +1,200 @@
+* {
+    margin: 0;       /*margen*/
+    padding: 0;
+    box-sizing: border-box;   /*borde en el ancho*/
+}
+
+body {
+    background-color: #111;
+    height: auto;           /*crece hacia abajo*/
+    overflow-y: auto;  /*scroll vertical*/
+    overflow-x: hidden;      /* evita que la pagina entera se mueva de lado */
+}
+
+.titulo-categoria {
+    color: white;
+    font-family: 'Segoe UI', sans-serif; /* Una fuente más limpia */
+    font-size: 1.8rem;
+    margin: 60px 0 20px 40px;
+    text-transform: uppercase;
+    letter-spacing: 6px; /* Más espacio entre letras para un look de lujo */
+    opacity: 0.8; /* Un poco transparente para no robar atención a las fotos */
+    display: flex;
+    align-items: center;
+}
+/*DIAMANTE*/
+.titulo-categoria::before {
+    content: "";              /*necesario para que el elemento sea visible aunque no tenga texto*/
+    width: 12px;
+    height: 12px;
+    background: white;
+    margin-right: 20px;           /*separa el diamante del texto*/
+    display: inline-block;     /*se alinea con el texto*/
+    transform: rotate(45deg);        /*gira el cuadrado original para convertirlo en un diamante*/
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+/*=============================================Tarjetas==========================================================*/
+.deslizar-paises {              /*deslizamiento horizontal de las tarjetas*/
+    display: flex;       /* alinea en fila las tarjetas */
+    height: 85vh;          /* altura de la sección de deslizamiento */
+    width: 100vw;
+    overflow-x: scroll;       /*deja deslizarse*/
+    scroll-snap-type: x mandatory; /*tarjetas al centro al deslizar */
+    align-items: center;
+    padding: 0 40px ;
+    gap: 60px;             /*separa las tarjetas*/
+    margin-bottom: 50px;   /* Espacio entre una fila y la siguiente */
+    scroll-behavior: smooth; /*truco para hacer el scroll horizontal mas suave*/
+}
+
+.deslizar-paises::-webkit-scrollbar { display: none; }  /*oculta la barra de scroll*/
+.deslizar-paises { scrollbar-width: none; }
+
+.diseñtarjet-paises {
+    position: relative;           /* Permite posicionar elementos (como el texto) dentro de ella */
+    flex: 0 0 100vw;    /* Ancho de la tarjeta */
+    max-width: 25%;
+    height: 80vh;
+    border-radius: 30px;               /*bordes redondos*/
+    overflow: hidden;             /* Corta cualquier contenido (como la imagen) que se salga de los bordes */
+    scroll-snap-align: center;                 /*tarjeta  al centro al deslizar */
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    color: white;
+}
+
+.francia { background-image: url('../Imagenes/franciaimg.jpeg'); }
+.italia  { background-image: url('../Imagenes/italiaimg.jpg'); }
+.españa  { background-image: url('../Imagenes/EspañaaImg.jpg'); }
+.alemania { background-image: url('../Imagenes/alemaniaimg.jpg'); }
+.reino-unido { background-image: url('../Imagenes/reinounidoimg.jpg'); }
+
+.usa     { background-image: url('../Imagenes/usaimg.jpg'); }
+.china   { background-image: url('../Imagenes/chinaimg.jpg'); }
+.japon   { background-image: url('../Imagenes/japonimg.jpg'); }
+.turquia { background-image: url('../Imagenes/turquiaimg.jpg'); }
+.grecia  { background-image: url('../Imagenes/greciaimg.jpg'); }
+
+.mexico  { background-image: url('../Imagenes/mexicoimg.jpg'); }
+.tailandia { background-image: url('../Imagenes/tailandiaimg.jpg'); }
+.malasia { background-image: url('../Imagenes/malasiaimg.jpg'); }
+.dubai   { background-image: url('../Imagenes/dubaiimg.jpg'); }
+.portugal { background-image: url('../Imagenes/portugalimg.jpg'); }
+
+
+.suiza    { background-image: url('../Imagenes/suizaimg.jpg'); }
+.canada   { background-image: url('../Imagenes/canadaimg.jpg'); }
+.islandia { background-image: url('../Imagenes/islandiaimg.jpg'); }
+.noruega  { background-image: url('../Imagenes/noruegaimg.jpg'); }
+.austria  { background-image: url('../Imagenes/austriaimg.jpg'); }
+
+.capa-sombra {
+    position: absolute;           /*se coloca encima de la imagen de fondo*/
+    top: 0; left: 0;
+    width: 100%; height: 100%; /*cubre toda la tarjeta*/
+    background: linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.9) 100%);
+}
+
+/*========================================texto y boton====================================================== */
+.texto-tarjeta {
+    position: absolute;           /*se posiciona de forma independiente*/
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);       /*el centro del texto coincide con el centro de la tarjeta */
+    z-index: 2;                      /*por encima del overlay*/
+    text-align: center;
+    width: 90%;
+}
+
+.texto-tarjeta h1 {  
+    font-size: clamp(60px, 10vw, 100px);        /*tamaño del titulo ajustado */
+    text-transform: uppercase;         /*mayusculas */
+    letter-spacing: 5px;         /*espacio entre letras*/
+}
+
+.texto-tarjeta p {
+    font-size: 1.8rem;       /*Tamaño*/
+    font-weight: 300;           /*grosor*/
+    margin-bottom: 25px;      /*separación con el botón */
+    color: #f0f0f0;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+}
+
+/*=================================================Ver destinos=========================================== */
+.verdestinos {
+    display: inline-block;              /*permite darle dimensiones y margenes al enlace*/
+    margin-top: 20px;             /*separa el botón del texto de arriba*/
+    padding: 12px 40px;         /*tamaño*/
+    font-size: 1.5rem;                         /*tamaño de la letra*/
+    background-color: white;
+    color: black;
+    text-decoration: none;      /*quita el subrayado del enlace*/
+    border-radius: 50px;
+    font-weight: bold;       /*negrita*/
+    transition: 0.3s;
+}
+.verdestinos:hover {
+    transform: scale(1.2);        /*agranda el boton al acercar*/
+    background-color: #f0f0f0;
+}
+
+/* ==========================celular================================================= */
+
+@media (max-width:768px){
+.titulo-categoria{
+    font-size: 1.3rem;
+    margin: 40px 0 10px 20px;
+    letter-spacing: 3px;
+}
+.deslizar-paises{
+    height: 70vh;
+    padding: 0 20px;
+    gap: 30px;
+}
+.diseñtarjet-paises{
+    flex: 0 0 90vw;
+    max-width: 90%;
+    height: 60vh;
+}
+.texto-tarjeta h1{
+    font-size: clamp(30px,8vw,60px);
+}
+.texto-tarjeta p{
+    font-size: 1rem;
+}
+.verdestinos{
+    font-size: 1rem;
+    padding: 10px 25px;
+}
+
+/* ==============================================Tablet=================================================== */
+
+@media (min-width:769px) and (max-width:1024px){
+.deslizar-paises{
+    gap: 40px;
+}
+.diseñtarjet-paises{
+    flex: 0 0 60vw;
+    max-width: 60%;
+    height: 70vh;
+}
+.texto-tarjeta h1{
+    font-size: clamp(40px,7vw,80px);
+}
+.texto-tarjeta p{
+    font-size: 1.3rem;
+}
+}
+
+/* =================================================laptop================================================ */
+
+@media (min-width:1025px){
+.diseñtarjet-paises{
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+}
+}
