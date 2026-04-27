@@ -12,26 +12,30 @@ body {
 }
 
 .titulo-categoria {
-    color: white;
-    font-family: 'Segoe UI', sans-serif; /* Una fuente más limpia */
-    font-size: 1.8rem;
+    background-color: white;    /* La barra blanca de fondo */
+    color: black;               /* Las letras pasan a ser negras para resaltar */
+    display: inline-flex;       /* Hace que la barra solo ocupe el ancho del texto */
+    align-items: center;  
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 4rem;        /* Lo bajé un poco para que no sea gigante en la barra */
+    padding: 30px 60px;    /* Espacio interno para que la barra respire */
     margin: 60px 0 20px 40px;
     text-transform: uppercase;
-    letter-spacing: 6px; /* Más espacio entre letras para un look de lujo */
-    opacity: 0.8; /* Un poco transparente para no robar atención a las fotos */
-    display: flex;
-    align-items: center;
+    letter-spacing: 8px;      /* Más espacio para un look más moderno */
+    font-weight: 900;      /* Letras gruesas para que se note el recorte */
+    
+    border-radius: 4px;         /* Un toque sutil en las esquinas */
 }
-/*DIAMANTE*/
+
+/* Ajustamos el diamante para que ahora sea negro y combine */
 .titulo-categoria::before {
-    content: "";              /*necesario para que el elemento sea visible aunque no tenga texto*/
-    width: 12px;
-    height: 12px;
-    background: white;
-    margin-right: 20px;           /*separa el diamante del texto*/
-    display: inline-block;     /*se alinea con el texto*/
-    transform: rotate(45deg);        /*gira el cuadrado original para convertirlo en un diamante*/
-    border: 2px solid rgba(255,255,255,0.5);
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: black;          /* Diamante negro sobre barra blanca */
+    margin-right: 25px;
+    transform: rotate(45deg);
+    display: inline-block;
 }
 
 /*=============================================Tarjetas==========================================================*/
@@ -54,8 +58,8 @@ body {
 .diseñtarjet-paises {
     position: relative;           /* Permite posicionar elementos (como el texto) dentro de ella */
     flex: 0 0 100vw;    /* Ancho de la tarjeta */
-    max-width: 25%;
-    height: 80vh;
+    max-width: 20%;
+    height: 60vh;
     border-radius: 30px;               /*bordes redondos*/
     overflow: hidden;             /* Corta cualquier contenido (como la imagen) que se salga de los bordes */
     scroll-snap-align: center;                 /*tarjeta  al centro al deslizar */
