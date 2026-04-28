@@ -4,7 +4,14 @@
     box-sizing: border-box;   /*borde en el ancho*/
 }
 
+.diseñlogin svg {
+    width: 22px;
+    height: 22px;
+    stroke: black;
+}
+
 body {
+    padding-top: 80px;
     background-color: #111;
     height: auto;           /*crece hacia abajo*/
     overflow-y: auto;  /*scroll vertical*/
@@ -17,8 +24,8 @@ body {
     display: inline-flex;       /* Hace que la barra solo ocupe el ancho del texto */
     align-items: center;  
     font-family: 'Segoe UI', sans-serif;
-    font-size: 4rem;        /* Lo bajé un poco para que no sea gigante en la barra */
-    padding: 30px 60px;    /* Espacio interno para que la barra respire */
+    font-size: 2rem;        /* Lo bajé un poco para que no sea gigante en la barra */
+    padding: 15px 30px;    /* Espacio interno para que la barra respire */
     margin: 60px 0 20px 40px;
     text-transform: uppercase;
     letter-spacing: 8px;      /* Más espacio para un look más moderno */
@@ -41,7 +48,7 @@ body {
 /*=============================================Tarjetas==========================================================*/
 .deslizar-paises {              /*deslizamiento horizontal de las tarjetas*/
     display: flex;       /* alinea en fila las tarjetas */
-    height: 85vh;          /* altura de la sección de deslizamiento */
+    height: 60vh;          /* altura de la sección de deslizamiento */
     width: 100vw;
     overflow-x: scroll;       /*deja deslizarse*/
     scroll-snap-type: x mandatory; /*tarjetas al centro al deslizar */
@@ -113,7 +120,7 @@ body {
 }
 
 .texto-tarjeta h1 {  
-    font-size: clamp(60px, 10vw, 100px);        /*tamaño del titulo ajustado */
+    font-size: clamp(28px, 4vw, 50px);        /*tamaño del titulo ajustado */
     text-transform: uppercase;         /*mayusculas */
     letter-spacing: 5px;         /*espacio entre letras*/
 }
@@ -131,8 +138,8 @@ body {
 .verdestinos {
     display: inline-block;              /*permite darle dimensiones y margenes al enlace*/
     margin-top: 20px;             /*separa el botón del texto de arriba*/
-    padding: 12px 40px;         /*tamaño*/
-    font-size: 1.5rem;                         /*tamaño de la letra*/
+    padding: 8px 20px;         /*tamaño*/
+    font-size: 1rem;                         /*tamaño de la letra*/
     background-color: white;
     color: black;
     text-decoration: none;      /*quita el subrayado del enlace*/
@@ -173,6 +180,7 @@ body {
     font-size: 1rem;
     padding: 10px 25px;
 }
+}
 
 /* ==============================================Tablet=================================================== */
 
@@ -201,4 +209,4 @@ body {
     max-width: 25%;
 }
 }
-}
+

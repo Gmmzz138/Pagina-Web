@@ -1,3 +1,7 @@
+html {
+    font-size: 14px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,9 +13,9 @@
     background-color: #000; /*color de la barra*/
     display: flex;          /* Alinea logo y navegación en línea */
     align-items: center;    /* Centra los elementos verticalmente */
-    height: 120px;       /* altura de la barra */
+    height: 80px;       /* altura de la barra */
     padding: 0 5%;
-    position: relative;       /*no deja mover el mouse(scroll) */
+    position: fixed;       /*no deja mover el mouse(scroll) */
     top: 0;
     left: 0;
     width: 100%;      /* ancho de la pantalla */
@@ -49,13 +53,13 @@
 .text-home-about {
     text-decoration: none;  /*quita el subrayado de los links */
     color: white;
-    font-size: 2.2rem;   /*tamaño de la palabra */ 
+    font-size: 1rem;   /*tamaño de la palabra */ 
     font-weight: 800;
     text-transform: uppercase; /* Todo en mayúsculas */
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 100px;       /* separación entre home about destination */
+    padding: 0 20px;       /* separación entre home about destination */
     transition: 0.3s;
 }
 .text-home-about:hover {    /*efecto al pasar el mouse por home about y demas  */
@@ -73,13 +77,13 @@
 
 .diseñlogin {
     background: white;
-    padding: 0px 80px;
-    border-radius: 50px;    /*bordes redondeados del login */
+    padding: 8px 20px;
+    border-radius: 30px;    /*bordes redondeados del login */
     font-weight: 900;
     text-transform: uppercase; /* Todo en mayúsculas */
     height: auto !important; 
     text-decoration: none; 
-    font-size: 1.8rem;    /*tamaño de la letra*/
+    font-size: 1rem;    /*tamaño de la letra*/
     color: #000;
     display: inline-block;  /*el botón se comporta como un bloque*/
     transition: 0.3s;
@@ -100,7 +104,7 @@
     justify-content: flex-start;            /*lado izquierdo del contenedor*/
     align-items: center;
     color: white;
-    padding-top: 120px;   /*contenido en medio */
+    padding-top: 80px;   /*contenido en medio */
     
 }
 
@@ -126,7 +130,7 @@
 
 /* Título El mundo te espera  */
 .contenido h1 {
-    font-size: clamp(50px, 8vw, 100px);
+    font-size: clamp(20px, 3vw, 30px);
     font-weight: 900;
     text-transform: uppercase;           /*mayúsculas*/
     line-height: 0.9;              /*espacio entre lineas*/
@@ -135,19 +139,19 @@
 
 /* Párrafo Descriptivo */
 .contenido p {
-    font-size: clamp(20px, 2.5vw, 35px);
-    font-weight: 400;
+    font-size: clamp(15px, 5vw, 20px);
+    font-weight: 200;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 60px;            /*espacio entre el párrafo y el botón de abajo*/
-    max-width: 1300px;                    /*espacio de lineas */
+    max-width: 1000px;                    /*espacio de lineas */
     text-align: justify;
     line-height: 1.4;
 }
 
 /*==================================== Botón "Explorar Destinos"========================================== */
 .ExplorarDestinos {
-    padding: 35px 60px;   /*espacio interno */
-    font-size: 1.8rem;
+    padding: 15px 25px;   /*espacio interno */
+    font-size: 1rem;
     font-weight: 800;
     background-color: #000;
     color: white;
@@ -173,23 +177,23 @@
 /* ====================================================Laptop================================== */
 @media (max-width: 1440px) {
     .diseñbarra {
-        height: 100px;
+        height: 70px;
         padding: 0 4%;
     }
     .logo {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
     .text-home-about {
-        font-size: 2rem;
-        padding: 0 60px;
+        font-size: 1rem;
+        padding: 0 20px;
     }
     .diseñlogin {
-        font-size: 1.6rem;
-        padding: 0 60px;
+        font-size: 1rem;
+        padding: 8px 20px;
     }
     .ExplorarDestinos {
-        padding: 30px 50px;
-        font-size: 1.6rem;
+        padding: 15px 25px;
+        font-size: 1rem;
     }
 }
 
@@ -224,15 +228,15 @@
         padding-top: 100px;
     }
     .contenido h1 {
-        font-size: clamp(40px, 6vw, 80px);
+        font-size: clamp(14px, 1.5vw, 20px);
     }
     .contenido p {
         font-size: clamp(16px, 2vw, 28px);
         margin-bottom: 40px;
     }
     .ExplorarDestinos {
-        padding: 20px 40px;
-        font-size: 1.4rem;
+        padding: 15px 25px;
+        font-size: 1rem;
     }
     .diseñlogin svg {
         width: 50px;
@@ -290,8 +294,8 @@
         margin-bottom: 30px;
     }
     .ExplorarDestinos {
-        padding: 15px 30px;
-        font-size: 1.2rem;
+        padding: 15px 25px;
+        font-size: 1rem;
     }
     .diseñlogin svg {
         width: 40px;
