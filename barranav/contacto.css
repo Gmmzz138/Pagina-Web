@@ -1,5 +1,9 @@
+body{
+overflow-x: hidden;
+}
+
 html{
-font-size:18px;
+font-size:16px;
 }
 
 * {
@@ -15,7 +19,7 @@ font-size:18px;
     background-color: #000; /*color de la barra*/
     display: flex;          /* Alinea logo y navegación en línea */
     align-items: center;    /* Centra los elementos verticalmente */
-    height: 120px;       /* altura de la barra */
+    height: 80px;       /* altura de la barra */
     padding: 0 5%;
     position: relative;       /*no deja mover el mouse(scroll) */
     top: 0;
@@ -50,13 +54,13 @@ font-size:18px;
 .text-home-about {
     text-decoration: none;  /*quita el subrayado de los links */
     color: white;
-    font-size: 2.2rem;   /*tamaño de la palabra */ 
+    font-size: 1rem;   /*tamaño de la palabra */ 
     font-weight: 800;
     text-transform: uppercase; /* Todo en mayúsculas */
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 100px;       /* separación entre home about destination */
+    padding: 0 20px;       /* separación entre home about destination */
     transition: 0.3s;
 }
 .text-home-about:hover {    /*efecto al pasar el mouse por home about y demas  */
@@ -71,13 +75,13 @@ font-size:18px;
 }
 .diseñlogin {
     background: white;
-    padding: 0px 80px;
+    padding: 8px 20px;
     border-radius: 50px;    /*bordes redondeados del login */
     font-weight: 900;
     text-transform: uppercase; /* Todo en mayúsculas */
     height: auto !important; 
     text-decoration: none; 
-    font-size: 1.8rem;    /*tamaño de la letra*/
+    font-size: 1rem;    /*tamaño de la letra*/
     color: #000;
     display: inline-block;  /*el botón se comporta como un bloque*/
     transition: 0.3s;
@@ -91,7 +95,7 @@ font-size:18px;
 
 /*==========================================Imagen de fondo=======================================================*/ 
 .imgfondo{
-height:70vh; /*altura del banner principal*/
+height:60vh; /*altura del banner principal*/
 background:
 linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), /*capa oscura sobre la imagen*/
 url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
@@ -105,13 +109,13 @@ color:white;
 padding-top:80px;
 }
 .imgfondo h1{
-font-size:60px; /*tamaño del título*/
+font-size:40px; /*tamaño del título*/
 font-weight:800;
 margin-bottom:10px; /*espacio debajo del título*/
 text-shadow:0 5px 20px rgba(0,0,0,0.6);
 }
 .imgfondo p{
-font-size:20px;
+font-size:16px;
 margin-bottom:25px; /*espacio antes del botón*/
 }
 .imgfondo button{
@@ -131,9 +135,9 @@ background:#1d4ed8; /*color mas oscuro al pasar el mouse*/
 
 /*======================================Telefono, Whatsapp, Email, Gps========================================*/
 .fondo-telef-email-whatsapp{
-padding:120px 10%;           /*espacio*/
+padding:80px 10%;           /*espacio*/
 background:#000000;                 /*color del fondo*/
-margin-top:-80px;
+margin-top:-60px;
 border-radius:40px 40px 0 0; /*bordes redondeados*/
 }
 .fondo-grid{
@@ -151,7 +155,7 @@ gap:20px;   /*espacion entre ellas*/
 }
 .diseñodecontactos{
 background:white;
-padding:35px;       /*tamaño*/
+padding:25px;       /*tamaño*/
 border-radius:18px;     /*bordes redondos*/
 box-shadow:0 15px 35px rgba(0,0,0,0.08);
 transition:.4s;
@@ -165,7 +169,7 @@ box-shadow:0 25px 50px rgba(0,0,0,0.12);
 }
 
 .diseñodecontactos i{
-font-size:35px; /*tamaño del icono*/
+font-size:28px; /*tamaño del icono*/
 color:#2563eb;
 margin-bottom:12px;
 }
@@ -174,7 +178,7 @@ margin-bottom:12px;
 
 .EnvianosunMensaje{
 background:white;
-padding:40px;          /*tamaño*/
+padding:25px;          /*tamaño*/
 border-radius:18px;
 box-shadow:0 15px 35px rgba(0,0,0,0.08);
 }
@@ -193,7 +197,7 @@ margin-bottom:15px; /*espacio entre campos*/
 .EnvianosunMensaje input, .EnvianosunMensaje textarea{
 width:100%; /*ocupa todo el ancho*/
 border:1px solid #ddd;   /*borde gris*/
-padding:14px;          /*para que el texto no toque el borde*/
+padding:10px;          /*para que el texto no toque el borde*/
 border-radius:10px;
 font-size:14px;        /*tamaño del texto*/
 transition:.2s;
@@ -231,7 +235,7 @@ background:#1d4ed8;
 /*====================================================Mapa================================================ */
 .mapa{
 width:100%;   /*se muestra el mapa depende el tamaño*/
-height:400px;
+height:300px;
 }
 
 /*==================================================Pie de pagina================================================*/
@@ -239,7 +243,7 @@ footer{
 background:#0f172a; /*color oscuro*/
 color:white;
 text-align:center;
-padding:40px;
+padding:25px;
 }
 
 /*                                           @media para celular             */
