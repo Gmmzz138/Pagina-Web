@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesion</title>
-    <p>Holis</p>
+    <title>Login</title>
 
-    <style>
-    * {
-        margin: 0;       /*margen*/
-        padding: 0;
-        box-sizing: border-box;   /*borde en el ancho*/
-    }
-
-    body {
-        background-color: #111;
-        height: 100vh;
-        overflow: hidden;      /*desactiva el scroll principal para que no se mueva toda la página*/
-        color:aliceblue;
-        text-align:center;
-    }
-
-
-
-    </style>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    
+
+    <section class="login">
+        <h2>Iniciar sesión</h2>
+
+        <!--  FORM PARA QUE FUNCIONE ENTER -->
+        <form onsubmit="login(event)">
+            
+            <input type="email" id="correo" placeholder="Correo" required>
+            
+            <input type="password" id="password" placeholder="Contraseña" required>
+
+            <button type="submit">Entrar</button>
+
+            <p id="mensaje"></p>
+
+        </form>
+    </section>
+
+    <script src="login.js"></script>
+
 </body>
 </html>
-
