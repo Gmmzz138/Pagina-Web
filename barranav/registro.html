@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - LookMeUp</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <section class="login">
+        <h2>Crear Cuenta</h2>
+        <form onsubmit="registrarUsuario(event)">
+            <input type="text" id="nuevoNombre" placeholder="Nombre completo" required>
+            <input type="email" id="nuevoCorreo" placeholder="Correo electrónico" required>
+            <input type="password" id="nuevoPassword" placeholder="Contraseña" required>
+            
+            <button type="submit">Registrarse</button>
+            <p id="mensaje"></p>
+            
+            <p style="margin-top: 15px; font-size: 13px;">
+                ¿Ya tienes cuenta? <a href="../inicio.html" style="color: white; font-weight: bold; text-decoration: none;">Inicia sesión</a>
+            </p>
+        </form>
+    </section>
+
+    <script>
+        function registrarUsuario(event) {
+            event.preventDefault();
+            const nombre = document.getElementById("nuevoNombre").value;
+            const correo = document.getElementById("nuevoCorreo").value;
+            const pass = document.getElementById("nuevoPassword").value;
+            const mensaje = document.getElementById("mensaje");
+
+            // 1. Obtener lista de usuarios o crear una nueva
+            let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+            // 2. Revisar si el correo ya existe
+            if (usuarios.find(u => u.correo === correo)) {
+                mensaje.textContent = "❌ Este correo ya existe";
+                mensaje.style.color = "red";
+                return;
+            }
+
+            // 3. Guardar y redirigir
+            usuarios.push({ nombre, correo, password: pass });
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+            mensaje.textContent = "✅ ¡Registro exitoso!";
+            mensaje.style.color = "lightgreen";
+
+            setTimeout(() => { window.location.href = "index.html"; }, 1500);
+        }
+    </script>
+</body>
+</html>

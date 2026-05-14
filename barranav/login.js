@@ -1,42 +1,30 @@
 async function login(event) {
-    event.preventDefault(); // 🔥 evita recarga
+    event.preventDefault();
 
     var correo = document.getElementById("correo").value;
     var password = document.getElementById("password").value;
     var mensaje = document.getElementById("mensaje");
 
-    try {
-        var response = await fetch("../data/usuarios.json");
-        var usuarios = await response.json();
+    // 1. Traer los usuarios que se han registrado en el navegador
+    var usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-        var valido = false;
+    // 2. Buscar si coinciden los datos
+    var usuarioEncontrado = usuarios.find(u => u.correo === correo && u.password === password);
 
-        for (var i = 0; i < usuarios.length; i++) {
-            if (
-                usuarios[i].correo === correo &&
-                usuarios[i].password === password
-            ) {
-                valido = true;
-            }
-        }
+    if (usuarioEncontrado) {
+    mensaje.textContent = "✅ Bienvenido " + usuarioEncontrado.nombre;
+    mensaje.style.color = "lightgreen";
 
-        if (valido) {
-            mensaje.textContent = "✅ Bienvenido";
-            mensaje.style.color = "green";
+    localStorage.setItem("sesionActiva", "true");
 
-            localStorage.setItem("usuario", correo);
+    setTimeout(function () {
+        // CORRECCIÓN AQUÍ: 
+        // Asegúrate de que NO tenga puntos (../) si están en la misma carpeta
+        window.location.href = "../inicio.html"; 
+    }, 1000);
 
-            setTimeout(function () {
-                window.location.href = "../index.html";
-            }, 1000);
-
-        } else {
-            mensaje.textContent = "❌ Datos incorrectos";
-            mensaje.style.color = "red";
-        }
-
-    } catch (error) {
-        mensaje.textContent = "Error al cargar usuarios";
-        mensaje.style.color = "orange";
+    } else {
+        mensaje.textContent = "❌ Correo o contraseña incorrectos";
+        mensaje.style.color = "red";
     }
 }

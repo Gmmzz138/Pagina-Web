@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destino - LookMeUp</title>
-    <link rel="stylesheet" href="paises.css">/
+    <link rel="stylesheet" href="paises.css">
 </head>
 <body>
     <h2 class="titulo-categoria" id="nombre-pais">Cargando...</h2>
@@ -16,6 +16,21 @@
         <a href="../destino/destinos.html" class="btn-volver">Volver a Países</a>
     </div>
 
+    
+   
+    <div id="modalDetalle" class="modal">
+    <div class="contenido-modal">
+        <span class="cerrar-modal">&times;</span>
+        <h2 id="modal-titulo"></h2>
+        <p id="modal-desc"></p>
+        <p class="precio">Precio: <span id="modal-precio"></span></p>
+        <button id="btn-favorito" class="btn-reservar">Agregar a Mis Favoritos</button>
+    </div>
+</div>
     <script src="paises.js"></script>
+
+    <!-- Contenedor para los mensajes chidos -->
+<div id="notificacion-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 10000;"></div>
+
 </body>
 </html>

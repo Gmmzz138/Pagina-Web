@@ -1,7 +1,14 @@
 /* ==================================================barra de navegacion=============================================================== */
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    padding-top: 80px; /* Espacio para que la barra fija no tape el contenido */
 }
 
 .diseñbarra {
@@ -10,7 +17,7 @@
     align-items: center;    /* Centra los elementos verticalmente */
     height: 80px;       /* altura de la barra */
     padding: 0 5%;
-    position: relative;       /*no deja mover el mouse(scroll) */
+    position: fixed;       /* Cambiado a fixed para que se quede arriba al bajar */
     top: 0;
     left: 0;
     width: 100%;      /* ancho de la pantalla */
@@ -22,9 +29,14 @@
     font-weight: bold;    /*negritas*/
     flex-shrink: 0;
 }
+
+.logo img {
+    height: 50px; /* Ajusta el tamaño del logo para que no ensanche la barra */
+}
+
 .menu {
     flex: 1;                /* distribuye los links */
-    height: 100%;
+    height: 100%;           /* Importante: para que el menú ocupe toda la barra */
     display: flex;
     justify-content: center; /* centra la lista de navegación */
     align-items: center;
@@ -32,26 +44,27 @@
 .home-about-ul {
     display: flex;  /*"Home, About, Destinos y contactos" hace que se pongan uno al lado del otro en una fila*/
     align-items: center;  /*alinea los nombres verticalmente justo al centro de la barra*/
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     list-style: none;       /* quita los puntos de la lista */
+    width: 100%;
+    gap: 3px;
 }
 .fondo-home-about {  /*cuando el usuario quiera hacer clic no tiene que apuntar exactamente a la letra*/
     height: 100%;  /*obliga a que cada item de la lista sea tan alto como la barra de navegación*/
     display: flex;
     align-items: center;
-    overflow: hidden;  /*evita que el fondo se desborde fuera de la barra */
 }
 .text-home-about {
     text-decoration: none;  /*quita el subrayado de los links */
     color: white;
-    font-size: 1rem;   /*tamaño de la palabra */ 
+    font-size: 0.9rem;   /* Tamaño un poco más pequeño para que quepan bien todos */ 
     font-weight: 800;
     text-transform: uppercase; /* Todo en mayúsculas */
     display: flex;
     align-items: center;
-    height: auto;
-    padding: 10px 20px;       /* separación entre home about destination */
+    height: 100%;     
+    padding: 0 20px;     /* separación horizontal entre links */
     transition: 0.3s;
 }
 .text-home-about:hover {    /*efecto al pasar el mouse por home about y demas  */
@@ -70,9 +83,8 @@
     border-radius: 50px;    /*bordes redondeados del login */
     font-weight: 900;
     text-transform: uppercase; /* Todo en mayúsculas */
-    height: auto !important; 
     text-decoration: none; 
-    font-size: 1rem;    /*tamaño de la letra*/
+    font-size: 0.9rem;    /*tamaño de la letra*/
     color: #000;
     display: flex;
     align-items: center;
@@ -81,10 +93,28 @@
 }
 .diseñlogin:hover {
     background-color: white !important;
-    color:#000 !important; /* cambia a amarillo al pasar el mouse */
+    color:#000 !important;
     transform: scale(1.1);     /*crece al seleccionarlo (hover) */
 }
 
+/*estrellaaaaaaaaaaaaaaaaa  */
+.boton-estrella {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Suaviza el crecimiento */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.boton-estrella:hover {
+    transform: scale(1.3); /* Crece un 30% */
+}
+
+.boton-estrella:hover svg {
+    fill: white; /* Se rellena de blanco */
+    stroke: white; /* El borde también se vuelve blanco */
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); /* Opcional: Un ligero resplandor */
+    transition: all 0.3s ease;
+}
 
 /* =================================== acerca de ======================================================== */
 
@@ -127,9 +157,17 @@
 }
 
 .acerca h2{
-    font-size:40px;
-    margin-bottom:30px;
-    text-shadow:3px 3px 15px rgba(0,0,0,0.7);
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 65px;
+    font-weight: 900; /* Lo mas grueso posible */
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 2px;  /* Las letras pegaditas dan mas fuerza */
+    line-height: 1.5;
+    white-space: nowrap;          /*Esto obliga a que se mantengan en la misma linea */ 
+    text-align: center; 
+    position: relative;
+    right: -43px; /*Ajusta este numero */
 }
 
 .acerca p{
@@ -150,11 +188,6 @@
     text-align:center;
 }
 
-.acerca-servicios h2{
-    font-size:36px;
-    margin-bottom:50px;
-    color:black;
-}
 
 .acerca-servicios ul{
     list-style:none;
@@ -166,6 +199,7 @@
 
 .acerca-servicios li{
     background:white;
+    color: black;
     padding:25px 30px;
     font-size:16px;
     border-radius:15px;
@@ -187,17 +221,23 @@
     background:#267D5D;
 }
 
-.acerca-mision h2{
-    font-size:36px;
-    margin-bottom:20px;
+.acerca-servicios h2, 
+.acerca-mision h2 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 50px;
+    font-weight: 500; /* Lo más grueso posible */
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 2px; /* Las letras pegaditas dan más fuerza */
+    line-height: 1.5;
+    padding-left: 20px;
+    text-align: center; /* Alineado a la izquierda se ve más agresivo/fuerte */
 }
-
-acerca-mision p{
+.acerca-mision p{ /* Corregido selector */
     font-size:18px;
     max-width:700px;
     margin:auto;
     line-height:1.7;
-    color: pink;
 }
 
 
@@ -231,7 +271,17 @@ acerca-mision p{
     font-size:16px;
 }
 
-/*                                 celular                 */
+
+.fuente-especial {
+    font-family: 'Fira Sans', sans-serif; /* Aquí pones la fuente que elegiste */
+    font-weight: 900;
+    font-size: 50px; /* Ajusta el tamaño a tu gusto */
+    text-align: center;
+    display: block; /* Ayuda a que el centrado funcione sin la etiqueta <center> */
+    color: #ffffff; /* O el color que prefieras */
+}
+
+/* celular                                 */
 
 @media (max-width:768px){
 .diseñbarra{
@@ -300,7 +350,7 @@ acerca-mision p{
 }
 }
 
-/*                                            tablet                  */
+/* tablet                                   */
 @media (min-width:769px) and (max-width:1024px){
 .logo{
     font-size:2rem;
@@ -327,7 +377,7 @@ acerca-mision p{
 }
 }
 
-/*                               laptop                 */
+/* laptop                                 */
 @media (min-width:1025px){
 .acerca-servicios ul{
     flex-direction:row;
@@ -336,6 +386,3 @@ acerca-mision p{
     flex-direction:row;
 }
 }
-
-
-

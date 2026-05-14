@@ -1,0 +1,156 @@
+html{
+font-size:14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*hace que padding y border no aumenten el tamaño del elemento*/
+    font-family: Arial, sans-serif;
+    
+}
+
+.diseñbarra {
+    background-color: #000; /*color de la barra*/
+    display: flex;          /* Alinea logo y navegación en línea */
+    align-items: center;    /* Centra los elementos verticalmente */
+    height: 80px;       /* altura de la barra */
+    padding: 0 5%;
+    position: fixed;       /* Cambiado a fixed para que se quede arriba al bajar */
+    top: 0;
+    left: 0;
+    width: 100%;      /* ancho de la pantalla */
+    z-index: 1000;   /*encima de todo */
+}
+.logo {
+    color: white;
+    font-size: 2.5rem;  /* Tamaño*/
+    font-weight: bold;    /*negritas*/
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 50px; /* Ajusta el tamaño del logo para que no ensanche la barra */
+}
+
+.menu {
+    flex: 1;                /* distribuye los links */
+    height: 100%;           /* Importante: para que el menú ocupe toda la barra */
+    display: flex;
+    justify-content: center; /* centra la lista de navegación */
+    align-items: center;
+}
+.home-about-ul {
+    display: flex;  /*"Home, About, Destinos y contactos" hace que se pongan uno al lado del otro en una fila*/
+    align-items: center;  /*alinea los nombres verticalmente justo al centro de la barra*/
+    /* width: 100%; */
+    height: 100%;
+    list-style: none;       /* quita los puntos de la lista */
+    width: 100%;
+}
+.fondo-home-about {  /*cuando el usuario quiera hacer clic no tiene que apuntar exactamente a la letra*/
+    height: 100%;  /*obliga a que cada item de la lista sea tan alto como la barra de navegación*/
+    display: flex;
+    align-items: center;
+}
+.text-home-about {
+    text-decoration: none;  /*quita el subrayado de los links */
+    color: white;
+    font-size: 0.9rem;   /* Tamaño un poco más pequeño para que quepan bien todos */ 
+    font-weight: 800;
+    text-transform: uppercase; /* Todo en mayúsculas */
+    display: flex;
+    align-items: center;
+    height: 100%;     
+    padding: 0 20px;     /* separación horizontal entre links */
+    transition: 0.3s;
+}
+.text-home-about:hover {    /*efecto al pasar el mouse por home about y demas  */
+    background-color: white;
+    color: black;
+}
+.alineacion-home-about {
+    margin-left: auto;      /* empuja el menú hacia el centro desde la izquierda */
+}
+.alineacion-login {
+    margin-left: auto;       /*empuja el botón login hacia la derecha */
+}
+.diseñlogin {
+    background: white;
+    padding: 8px 20px;
+    border-radius: 50px;    /*bordes redondeados del login */
+    font-weight: 900;
+    text-transform: uppercase; /* Todo en mayúsculas */
+    text-decoration: none; 
+    font-size: 0.9rem;    /*tamaño de la letra*/
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.diseñlogin:hover {
+    background-color: white !important;
+    color:#000 !important;
+    transform: scale(1.1);     /*crece al seleccionarlo (hover) */
+}
+
+
+/* Contenedor principal para la pagina de Favoritos */
+.fondo-favoritos {
+    /* 1. RUTA DE TU IMAGEN: Asegúrate de que el nombre coincida exactamente */
+    background-image: linear-gradient(rgba(17, 17, 17, 0.2), rgba(17, 17, 17, 0.4)), url('../Imagenes/misfav.jpg'); 
+    background-size: cover;           /* La imagen cubre toda la pantalla */
+    background-position: center;      /* Centrada siempre */
+    background-attachment: fixed;     /* La imagen no se mueve al hacer scroll (Efecto Parallax) */
+    min-height: 100vh;                /* Ocupa todo el alto de la pantalla */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ajuste para el titulo Mis Favoritos*/
+.titulo-favoritos {
+    background-color: transparent; 
+    color: white; 
+    padding: 0;
+    margin: 40px 0 60px 80px; /* Más espacio para que respire */
+    text-transform: uppercase;
+    font-size: 3rem; /* Letra grande e impactante */
+    font-weight: 900; /* Super negrita */
+    letter-spacing: 1px; /* Letras juntas (estilo revista de moda) */
+    line-height: 0.8;
+    position: relative;
+    opacity: 0.9;
+}
+
+/* Linea que cruza la pantalla */
+.titulo-favoritos::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 380px; /* Línea que no termina, da sensación de continuidad */
+    height: 2px;
+    background: white;
+}
+
+/* Contenedor de las tarjetas (inyectadas por JS) */
+#contenedor-favoritos {
+    display: flex;
+    flex-wrap: wrap;                  /* Permite que las tarjetas bajen a la siguiente fila */
+    justify-content: center; /* Alinea las tarjetas al inicio */
+    gap: 20px;               /* Espacio uniforme entre tarjetas */
+    padding: 20px;   /* Alineado con tu margen del título */
+    width: 100%;
+}
+
+.fondo-favoritos .diseñtarjet-paises {
+    width: calc(33.33% - 14px);
+    backdrop-filter: blur(5px); /* Hace que las tarjetas tengan un ligero efecto de vidrio */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto Viajes LookMeUp</title>
+    <title>Contactanos LookMeUp</title>
     <link rel="stylesheet" href="contacto.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!--Aqui se importa la biblioteca de iconos de Font Awesome-->
 </head>
@@ -15,11 +15,16 @@
         </div>
         <nav class="menu">
             <ul class="home-about-ul">
-                <li class="fondo-home-about alineacion-home-about"><a href="../index.html" class="text-home-about">Inicio</a></li>
+                <li class="fondo-home-about alineacion-home-about"><a href="../inicio.html" class="text-home-about">Inicio</a></li>
                 <li class="fondo-home-about"><a href="acercade.html" class="text-home-about">Acerca de</a></li>
                 <li class="fondo-home-about"><a href="../destino/destinos.html" class="text-home-about">Destinos</a></li>
                 <li class="fondo-home-about"><a href="contacto.html" class="text-home-about">Contacto</a></li>
-                <li class="fondo-home-about alineacion-login"><a href="login.html" class="diseñlogin"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="50" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></a></li> 
+                <li class="fondo-home-about alineacion-login"><a href="../index.html" class="diseñlogin"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></a></li> 
+                <a href="favoritos.html" class="boton-estrella" title="Mis Favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </a>
             </ul>
         </nav>
     </header>
@@ -30,7 +35,7 @@
         <div>
             <h1>Contactanos</h1>
             <p>Estamos listos para ayudarte a planear tu próxima aventura</p>
-            <button>Planear mi viaje</button>
+           <a href="../destino/destinos.html"><button>Planear mi viaje</button></a>
         </div>
     </section>
 
@@ -54,7 +59,7 @@
                 <div class="diseñodecontactos">
                     <i class="fa-solid fa-envelope"></i>     <!--Icono Correo-->
                     <h3>Email</h3>
-                    <p>losplebillos781@tecn.mx.com</p>
+                    <p>lasplebillasMCMG@gmail.com</p>
                 </div>
 
                 <div class="diseñodecontactos">
@@ -67,19 +72,19 @@
     <!--Aqui se encuentra el formulario "Escribe tu mensaje"  -->
             <div class="EnvianosunMensaje">
                 <h2>Envíanos un mensaje</h2>
-                <form>
+                <form id="miFormulario"> 
                     <div class="EnvianosunMensaje-campos">
-                        <input type="text" placeholder="Nombre">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
                     </div>
 
                     <div class="EnvianosunMensaje-campos">
-                        <input type="email" placeholder="Correo electrónico">
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
                     </div>
 
                     <div class="EnvianosunMensaje-campos">
-                        <textarea placeholder="Escribe tu mensaje..."></textarea>
+                        <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
                     </div>
-                    <button class="enviarmensaje">Enviar mensaje</button>
+                    <button type="submit" class="enviarmensaje">Enviar mensaje</button>
                 </form>
             </div>
         </div>
@@ -103,5 +108,35 @@
         <p>© 2026 LookMeUp Viajes</p>
         <p>Explora el mundo con nosotros</p>
     </footer>
+
+<!-- PARAAAAA MANDAR MENSAJES AL CORREO QUE TIENE DESTINADO LA PAGINA -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+    // 2. Aquí puse tu Public Key (YQ_JEmC9d-FIHalLc)
+    emailjs.init("YQ_JEmC9d-FIHalLc");
+
+    document.getElementById('miFormulario').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita que la página se recargue sola
+
+        const btn = document.querySelector('.enviarmensaje');
+        btn.innerText = 'Enviando...';
+
+        // 3. Aquí puse tu Service ID y tu Template ID
+        const serviceID = 'service_shsbeiq';
+        const templateID = 'template_6fms7s9';
+
+        emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            btn.innerText = '¡Enviado!';
+            alert('¡Mensaje enviado con éxito a LookMeUp!');
+            this.reset(); // Esto limpia los cuadritos del formulario
+        }, (err) => {
+            btn.innerText = 'Error';
+            alert('Hubo un fallo: ' + JSON.stringify(err));
+        });
+    });
+    </script>
+
 </body>
 </html>

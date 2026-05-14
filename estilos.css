@@ -139,13 +139,13 @@ html {
 
 /* Párrafo Descriptivo */
 .contenido p {
-    font-size: clamp(15px, 5vw, 20px);
+    font-size: clamp(10px, 5vw, 15px);
     font-weight: 200;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 60px;            /*espacio entre el párrafo y el botón de abajo*/
     max-width: 1000px;                    /*espacio de lineas */
     text-align: justify;
-    line-height: 1.4;
+    line-height: 1.7;
 }
 
 /*==================================== Botón "Explorar Destinos"========================================== */
@@ -171,6 +171,24 @@ html {
     box-shadow: 0 15px 30px rgba(0,0,0,0.5); /*se agranda con acercamiento */
 }
 
+/*estrellaaaaaaaaaaaaaaaaa  */
+.boton-estrella {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Suaviza el crecimiento */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.boton-estrella:hover {
+    transform: scale(1.3); /* Crece un 30% */
+}
+
+.boton-estrella:hover svg {
+    fill: white; /* Se rellena de blanco */
+    stroke: white; /* El borde también se vuelve blanco */
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); /* Opcional: Un ligero resplandor */
+    transition: all 0.3s ease;
+}
 
 
 

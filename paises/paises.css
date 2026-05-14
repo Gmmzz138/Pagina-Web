@@ -33,8 +33,8 @@ body {
 .contenedor-collage {
     display: grid;/*activa el modo rejilla*/
     grid-template-columns: repeat(4, 1fr);/*4 columnas iguales*/
-    grid-auto-rows: 250px;/*altura fija de filas*/
-    gap: 15px;/*espacio entre fotos*/
+    grid-auto-rows: 450px;/*altura fija de filas*/
+    gap: 20px;/*espacio entre fotos*/
     padding: 0 50px;
 }
 
@@ -74,25 +74,166 @@ body {
 }
 
 /*boton volver abajo*/
+/* Contenedor con espacio generoso */
 .cont-volver {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    width: 100%;
+    margin: 120px 0 80px 0;
+    display: flex;
+    justify-content: center;
+    clear: both;
 }
 
-.btn-volver {
-    color: #aaa;
-    text-decoration: none;
-    border: 1px solid #444;
-    padding: 10px 40px;
-    border-radius: 30px;
+/* Botón Estilo Boutique */
+.cont-volver .btn-volver {
+    all: unset;
+    cursor: pointer;
+    position: relative;
+    padding: 16px 45px; /* Aumentamos padding vertical para que se vea más lleno */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Usamos la misma fuente del body */
+    font-size: 13px; /* Aumentamos un punto para mayor legibilidad */
+    font-weight: 600; /* Letra un poco más gruesa para que "resalte" más */
     text-transform: uppercase;
-    font-size: 0.9rem;
+    letter-spacing: 7px; /* Espaciado muy amplio */
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.25); /* Borde un poco más visible */
+    background: transparent;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+    border-radius: 50px; /* AQUÍ ESTÁ EL CAMBIO PRINCIPAL: Esquinas completamente redondas */
+}
+
+/* Efecto de fondo líquido */
+.cont-volver .btn-volver::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white; /* Relleno blanco */
+    transform: scaleX(0); /* Empieza invisible */
+    transform-origin: right; /* Se retrae hacia la derecha */
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: -1; /* Se queda detrás del texto */
+    border-radius: 50px; /* También redondeamos el efecto de relleno */
+}
+
+/* La flecha minimalista lateral */
+.cont-volver .btn-volver::after {
+    content: " \2192"; /* Flecha hacia la derecha */
+    display: inline-block;
+    margin-left: 12px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.5s ease;
+}
+
+
+.cont-volver .btn-volver:hover {
+    color: #000; /* El texto cambia a negro para resaltar sobre el fondo blanco */
+    border-color: white;
+    letter-spacing: 9px; /* El texto se expande ligeramente más */
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15); /* Añadimos un sutil resplandor blanco */
+}
+
+.cont-volver .btn-volver:hover::before {
+    transform: scaleX(1); /* El fondo blanco cubre el botón */
+    transform-origin: left; /* La animación nace desde la izquierda */
+}
+
+.cont-volver .btn-volver:hover::after {
+    opacity: 1;
+    transform: translateX(5px);
+    color: #000;
+}
+
+/* Pequeño ajuste para dispositivos táctiles */
+.cont-volver .btn-volver:active {
+    transform: scale(0.97);
+}
+
+/* Estilos del Modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.85); /* Fondo oscuro transparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido-modal {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    border: 1px solid #333;
+    position: relative;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #888;
+}
+
+.precio {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #4CAF50; /* Color verde para el precio */
+    font-weight: bold;
+}
+
+.btn-reservar {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.btn-volver:hover {
+.btn-reservar:hover {
+    transform: scale(1.1);
+    background-color: #ddd;
+}
+
+.toast-personalizado {
+    background: #ffffff;
+    color: #000;
+    padding: 15px 25px;
+    margin-top: 10px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideIn 0.5s ease forwards, fadeOut 0.5s ease 2.5s forwards;
+}
+
+.toast-eliminar {
+    background: #ff4d4d;
     color: white;
-    border-color: white;
-    background: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
 }
