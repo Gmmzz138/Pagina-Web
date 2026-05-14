@@ -1,5 +1,7 @@
+const usuarioActivo = localStorage.getItem('usuarioLogueado') || 'invitado';
+const claveFavoritos = `favoritos_${usuarioActivo}`;
 const contenedorFav = document.getElementById('contenedor-favoritos');
-const listaFav = JSON.parse(localStorage.getItem('favoritos')) || [];
+const listaFav = JSON.parse(localStorage.getItem(claveFavoritos)) || [];
 
 if (listaFav.length === 0) {
     contenedorFav.innerHTML = "<h2 style='width:100%; text-align:center; margin-top:50px; color:white;'>Aún no tienes destinos favoritos.</h2>";
@@ -28,8 +30,9 @@ if (listaFav.length === 0) {
 }
 
 function eliminarFavorito(nombre) {
-    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+    // Se corrigió para que use la clave dinámica del usuario activo
+    let favoritos = JSON.parse(localStorage.getItem(claveFavoritos)) || [];
     favoritos = favoritos.filter(fav => fav !== nombre);
-    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    localStorage.setItem(claveFavoritos, JSON.stringify(favoritos));
     location.reload();
 }

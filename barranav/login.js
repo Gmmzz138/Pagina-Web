@@ -17,14 +17,26 @@ async function login(event) {
 
     localStorage.setItem("sesionActiva", "true");
 
+    // PARA GUARdar el usuario
+    localStorage.setItem("usuarioLogueado", usuarioEncontrado.nombre);
+
     setTimeout(function () {
-        // CORRECCIÓN AQUÍ: 
-        // Asegúrate de que NO tenga puntos (../) si están en la misma carpeta
         window.location.href = "../inicio.html"; 
-    }, 1000);
+    }, 500);
 
     } else {
         mensaje.textContent = "❌ Correo o contraseña incorrectos";
         mensaje.style.color = "red";
+    }
+
+    function cerrarSesion() {
+    // 1. Borramos quien estaba logueado
+    localStorage.removeItem("usuarioLogueado");
+    
+    // 2. Borramos el estado de la sesion
+    localStorage.removeItem("sesionActiva");
+
+    // 3. Redirigimos al login
+    window.location.href = "index.html"; 
     }
 }
